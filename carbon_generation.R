@@ -18,13 +18,13 @@ validate_date_range <- function(from_date, to_date){
     # input date cannot earlier than 20180511(API will not give response)
     min_allowed_date <- as.Date("2018-05-11")
     if (from_date < min_allowed_date || to_date < min_allowed_date) {
-      stop("Error: from_date and to_date cannot be earlier than May 11, 2018.")
+      stop("from_date and to_date cannot be earlier than May 11, 2018.")
     }
     
     days_difference <- as.numeric(difftime(to_date, from_date, units = "days"))
     
     if (to_date < from_date) {
-      stop("Error: to_date must be greater than or equal to from_date")
+      stop("to_date must be greater than or equal to from_date")
     } else if (from_date > Sys.Date()) {
       stop("from_date cannot be in the future.")
     } else if (to_date > Sys.Date()) {
@@ -35,8 +35,8 @@ validate_date_range <- function(from_date, to_date){
     return(c(from_date = from_date, to_date = to_date))
     
   }, error = function(e) {
-    cat("Error converting dates:", e$message, "\n")
-    return(c(from_date = NULL, to_date = NULL))
+    message("Error converting dates: ", e$message)
+    
   })
   
 }
