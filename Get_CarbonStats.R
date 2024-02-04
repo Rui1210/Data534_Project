@@ -1,3 +1,30 @@
+#' @name carbonVisR
+#' @docType package
+#' @title Carbon Visualization Package
+#' @description This package provides functions for visualizing carbon generation data.
+#'
+#' @author Zheng Zhang
+#' @import httr
+#' @import jsonlite
+#' @import tidyr
+#' @import dplyr
+#' @import lubridate
+#' @import ggplot2
+#' @import ggthemes
+#' @import RColorBrewer
+#' @import scales
+
+library(httr)
+library(jsonlite)
+library(tidyr)
+library(dplyr)
+library(lubridate)
+library(ggplot2)
+library(ggthemes)
+library(RColorBrewer)
+library(scales)
+
+
 #' Get Carbon Intensity Statistics
 #'
 #' This function retrieves carbon intensity statistics from the Carbon Intensity API
@@ -17,11 +44,10 @@
 #' @examples
 #' \dontrun{
 #' Get_CarbonStats("2023-01-20", "2023-01-30")
+#' Get_CarbonStats("2023-01-20", "2023-01-30")$data
+#' Get_CarbonStats("2023-01-20", "2023-01-30")$plot
 #' }
 #'
-#' @seealso
-#' \import{httr}
-#' \import{tidyverse}
 #'
 #' @export
 Get_CarbonStats <- function(from, to) {
@@ -34,19 +60,23 @@ Get_CarbonStats <- function(from, to) {
                           min = character(),
                           index = character(),
                           stringsAsFactors = FALSE)
-  
+
   for (day in seq(from, to - 1, by = '1 day')) {
       next_day <- day + 1
       url <- paste(stats_url, as.Date(day), as.Date(next_day), sep = '/')
-      response <- GET(url)
-      parsed_data <- content(response, "parsed")
-      df <- parsed_data[["data"]][[1]][["intensity"]]
-      result_row <- c(date = as.character(as.Date(day)),
-                      max = as.character(df$max),
-                      average = as.character(df$average),
-                      min = as.character(df$min),
-                      index = as.character(df$index))
-      result_df <- bind_rows(result_df, result_row)
+      tryCatch({
+        response <- GET(url)
+        parsed_data <- content(response, "parsed")
+        df <- parsed_data[["data"]][[1]][["intensity"]]
+        result_row <- c(date = as.character(as.Date(day)),
+                        max = as.character(df$max),
+                        average = as.character(df$average),
+                        min = as.character(df$min),
+                        index = as.character(df$index))
+        result_df <- bind_rows(result_df, result_row)
+      }, error = function(e) {
+        stop("Error in API request. Please check the date range and try again.")
+      })
   }
   result_df$date <- as.Date(result_df$date, formate = "%y-%m-%d")
   result_df$max <- as.numeric(result_df$max)
