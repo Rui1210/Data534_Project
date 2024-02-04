@@ -3,18 +3,15 @@
 #' @title Carbon Visualization Package
 #' @description This package provides functions for visualizing carbon generation data.
 #' @author Yahan
-#' @importFrom utils cat format as.POSIXct
-#' @importFrom lubridate minutes days floor_date
-#' @importFrom httr GET content
-#' @importFrom jsonlite fromJSON
-#' @importFrom tidyr unnest spread
-#' @importFrom dplyr group_by summarize select rename
-#' @importFrom ggplot2 ggplot aes geom_line geom_point
-#' @importFrom ggthemes theme_stata
-#' @importFrom scales scale_fill_brewer
-#' @importFrom utils colSums as.data.frame
-#' @importFrom grDevices brewer_pal
-
+#' @import httr
+#' @import jsonlite
+#' @import tidyr
+#' @import dplyr
+#' @import lubridate
+#' @import ggplot2
+#' @import ggthemes
+#' @import RColorBrewer
+#' @import scales
 
 library(httr)
 library(jsonlite)

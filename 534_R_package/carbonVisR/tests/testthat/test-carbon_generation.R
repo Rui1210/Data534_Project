@@ -1,14 +1,4 @@
-# library(httr)
-# library(jsonlite)
-# library(tidyr)
-# library(dplyr)
-# library(lubridate)
-# library(ggplot2)
-# library(ggthemes)
-# library(RColorBrewer)
-# library(scales)
-# library(lubridate)
-
+# test valid input date
 test_that("test valid input",{
   expected_from_date <- as.Date("2018-05-12")
   expected_to_date <- as.Date("2018-05-12")
