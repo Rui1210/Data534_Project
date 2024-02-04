@@ -26,9 +26,9 @@ is a data frame containing date-wise intensity statistics, and a ggplot object f
 visualizing the intensity trends over time.
 }
 \examples{
-\dontrun{
 Get_CarbonStats("2023-01-20", "2023-01-30")
-}
+Get_CarbonStats("2023-01-20", "2023-01-30")$data
+Get_CarbonStats("2023-01-20", "2023-01-30")$plot
 
 
 }

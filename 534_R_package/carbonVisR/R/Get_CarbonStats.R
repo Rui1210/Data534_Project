@@ -1,10 +1,10 @@
 #' @name carbonVisR
 #' @docType package
-#' @title Carbon Visualization Package
-#' @description This package provides functions for visualizing carbon generation data.
-#'
+#' @title Carbon-Intensity Visualization Package
+#' @keywords carbon intensity, visualization, generation mix, API
+#' @seealso \code{\link{Get_CarbonStats}}(ZZ)
+#' @references [Carbon Intensity API](https://carbon-intensity.github.io/api-definitions/#carbon-intensity-api-v2-0-0)
 #' @author Zheng Zhang
-#' @import httr
 #' @import jsonlite
 #' @import tidyr
 #' @import dplyr
@@ -42,11 +42,9 @@ library(scales)
 #' visualizing the intensity trends over time.
 #'
 #' @examples
-#' \dontrun{
 #' Get_CarbonStats("2023-01-20", "2023-01-30")
 #' Get_CarbonStats("2023-01-20", "2023-01-30")$data
 #' Get_CarbonStats("2023-01-20", "2023-01-30")$plot
-#' }
 #'
 #'
 #' @export
