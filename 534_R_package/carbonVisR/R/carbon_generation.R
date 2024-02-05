@@ -1,9 +1,9 @@
 #' @name carbonVisR
 #' @docType package
-#' @title Carbon Visualization Package
+#' @title Carbon-Intensity Visualization Package
 #' @description This package provides functions for visualizing carbon generation data.
-#' @author Yahan
-#' @import httr
+#' @author Yahan Cong
+#' @seealso \code{\link{validate_date_range}}(YC), \code{\link{carbon_generation}}(YC), \code{\link{carbon_generation_visual}}(YC)
 #' @import jsonlite
 #' @import tidyr
 #' @import dplyr
@@ -12,7 +12,9 @@
 #' @import ggthemes
 #' @import RColorBrewer
 #' @import scales
+#' @import mockery
 
+library(mockery)
 library(httr)
 library(jsonlite)
 library(tidyr)

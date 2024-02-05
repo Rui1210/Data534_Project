@@ -1,9 +1,10 @@
 Package: carbonVisR
 Type: Package
-Title: What the Package Does (One Line, Title Case)
+Title: Return and Visualize Carbon-intensity data
 Version: 0.1.2
-Authors: Yahan Cong, Rui Mao, Zheng Zhang
-Description: What the package does (one paragraph).
+Author: Yahan Cong, Rui Mao, Zheng Zhang
+Maintainer: Yahan Cong <yahan-cong@outlook.com>
+Description: A brief description of your package.
 Depends: R
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
@@ -14,6 +15,7 @@ Suggests:
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Imports:
+    usethis,
     httr,
     jsonlite,
     tidyr,
@@ -22,4 +24,5 @@ Imports:
     ggplot2,
     ggthemes,
     RColorBrewer,
-    scales
+    scales,
+    mockery

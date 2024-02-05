@@ -1,4 +1,5 @@
-# test valid input date
+library(mockery)
+
 test_that("test valid input",{
   expected_from_date <- as.Date("2018-05-12")
   expected_to_date <- as.Date("2018-05-12")
