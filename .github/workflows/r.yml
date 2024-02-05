@@ -37,6 +37,8 @@ jobs:
           elif [ "${{ runner.os }}" = "macOS" ]; then
             brew install pandoc
             R -e 'install.packages(c("remotes", "rcmdcheck", "usethis", "tidyr", "dplyr", "lubridate", "ggplot2", "ggthemes", "RColorBrewer", "scales", "httr"), dependencies = TRUE)'
+          elif [ "${{ runner.os }}" = "Windows" ]; then
+            R -e 'install.packages(c("remotes", "rcmdcheck", "usethis", "tidyr", "dplyr", "lubridate", "ggplot2", "ggthemes", "RColorBrewer", "scales", "httr"), dependencies = TRUE)'
           fi
         shell: bash {0}
 
