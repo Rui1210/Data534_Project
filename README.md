@@ -4,7 +4,7 @@
 /stamp
 
 ## Overview
-The `carbonVisR` package provides functions for visualizing carbon intensity and generation mix data using the Carbon Intensity API.
+The `carbonVisR` package is designed to empower users with the tools to analyze and visualize the dynamics of carbon intensity across the United Kingdom. Leveraging real-time data and forecasts from the Carbon Intensity API, our package meticulously compiles carbon emission statistics from various UK regions, enabling a detailed examination of environmental impacts.
 
 ## Installation 
 You can install the package from GitHub using the `devtools` package: 
@@ -25,6 +25,7 @@ Return a vector containing the validated from_date and to_date.
 validate_date_range(from_date, to_date)
 ```
 `from_date`: The starting date of the range.
+
 `to_date`: The ending date of the range.
 
 The input date range must not be earlier than May 11, 2018, and the date range cannot exceed 30 days. Otherwise, an error message will be generated.
@@ -45,6 +46,7 @@ Return a dataframe containing information about the carbon generation mix.
 carbon_generation(from_date, to_date)
 ```
 `from_date`: The starting date of the range.
+
 `to_date`: The ending date of the range.
 
 #### Example
@@ -62,7 +64,9 @@ A ggplot object representing the requested chart (for "line" and "stack" types).
 carbon_generation_visual(from_date, to_date, chart_type)
 ```
 `from_date`: The starting date of the range.
+
 `to_date`: The ending date of the range.
+
 `chart_type`: The type of chart to create ("line", "stack", or "pie").
 
 #### Example
@@ -95,6 +99,7 @@ The function queries the Carbon Intensity API for each day within the specified 
 Get_CarbonStats(from, to)
 ```
 `from`: Start date in "YYYY-MM-DD" format.
+
 `to`: End date in "YYYY-MM-DD" format.
 
 #### Example:
