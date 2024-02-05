@@ -13,6 +13,7 @@
 #' @import RColorBrewer
 #' @import scales
 #' @import mockery
+#' @import httr
 
 library(mockery)
 library(httr)

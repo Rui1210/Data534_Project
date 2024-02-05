@@ -62,13 +62,15 @@ test_that("test invalid dataframe", {
 
 test_that("test line chart", {
   line_chart <- carbon_generation_visual("2023-6-12", "2023-6-21", "line")
-  expect_that(line_chart, is_a("gg"))
+  #expect_that(line_chart, is_a("gg"))
+  expect_s3_class(line_chart, "gg")
 })
 
 
 test_that("test stack chart",{
   stack_chart <- carbon_generation_visual("2023-6-12", "2023-6-21", "stack")
-  expect_that(stack_chart, is_a("gg"))
+  #expect_that(stack_chart, is_a("gg"))
+  expect_s3_class(stack_chart, "gg")
 })
 
 test_that("test pie chart",{
