@@ -1,7 +1,8 @@
 ﻿# DATA 534 R Project
 
 # carbonVis
-/stamp
+[![R Package Build carbonVisR](https://github.com/Rui1210/Data534_Project/actions/workflows/r.yml/badge.svg)](https://github.com/Rui1210/Data534_Project/actions/workflows/r.yml)
+
 
 ## Overview
 The `carbonVisR` package is designed to empower users with the tools to analyze and visualize the dynamics of carbon intensity across the United Kingdom. Leveraging real-time data and forecasts from the Carbon Intensity API, our package meticulously compiles carbon emission statistics from various UK regions, enabling a detailed examination of environmental impacts.
