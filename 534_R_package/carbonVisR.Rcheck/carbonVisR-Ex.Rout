@@ -1,0 +1,204 @@
+
+R version 4.3.1 (2023-06-16) -- "Beagle Scouts"
+Copyright (C) 2023 The R Foundation for Statistical Computing
+Platform: aarch64-apple-darwin20 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "carbonVisR"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> base::assign(".ExTimings", "carbonVisR-Ex.timings", pos = 'CheckExEnv')
+> base::cat("name\tuser\tsystem\telapsed\n", file=base::get(".ExTimings", pos = 'CheckExEnv'))
+> base::assign(".format_ptime",
++ function(x) {
++   if(!is.na(x[4L])) x[1L] <- x[1L] + x[4L]
++   if(!is.na(x[5L])) x[2L] <- x[2L] + x[5L]
++   options(OutDec = '.')
++   format(x[1L:3L], digits = 7L)
++ },
++ pos = 'CheckExEnv')
+> 
+> ### * </HEADER>
+> library('carbonVisR')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("Get_CarbonStats")
+> ### * Get_CarbonStats
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: Get_CarbonStats
+> ### Title: Get Carbon Intensity Statistics
+> ### Aliases: Get_CarbonStats
+> 
+> ### ** Examples
+> 
+> Get_CarbonStats("2023-01-20", "2023-01-30")
+$data
+         date max average min    index
+1  2023-01-20 239     209 144     high
+2  2023-01-21 215     192 152 moderate
+3  2023-01-22 239     191 135 moderate
+4  2023-01-23 264     242 218     high
+5  2023-01-24 273     243  60     high
+6  2023-01-25 235     214 151     high
+7  2023-01-26 241     205 146     high
+8  2023-01-27 270     236 173     high
+9  2023-01-28 273     249 164     high
+10 2023-01-29 164     105  72      low
+
+$plot
+
+> Get_CarbonStats("2023-01-20", "2023-01-30")$data
+         date max average min    index
+1  2023-01-20 239     209 144     high
+2  2023-01-21 215     192 152 moderate
+3  2023-01-22 239     191 135 moderate
+4  2023-01-23 264     242 218     high
+5  2023-01-24 273     243  60     high
+6  2023-01-25 235     214 151     high
+7  2023-01-26 241     205 146     high
+8  2023-01-27 270     236 173     high
+9  2023-01-28 273     249 164     high
+10 2023-01-29 164     105  72      low
+> Get_CarbonStats("2023-01-20", "2023-01-30")$plot
+> 
+> 
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("Get_CarbonStats", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("actual_and_forecast")
+> ### * actual_and_forecast
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: actual_and_forecast
+> ### Title: Title: actual_and_forecast carbon intensity
+> ### Aliases: actual_and_forecast
+> 
+> ### ** Examples
+> 
+> actual_and_forecast('2023-01-12')
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("actual_and_forecast", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("carbon_generation")
+> ### * carbon_generation
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: carbon_generation
+> ### Title: Get Dataframe of Carbon Generation Mix
+> ### Aliases: carbon_generation
+> 
+> ### ** Examples
+> 
+> carbon_generation("2022-01-01", "2022-01-15")
+Valid date range. Proceeding with API request.
+# A tibble: 15 × 10
+   date                biomass  coal   gas hydro imports nuclear other solar
+   <dttm>                <dbl> <dbl> <dbl> <dbl>   <dbl>   <dbl> <dbl> <dbl>
+ 1 2022-01-01 00:00:00    249.   0    555. 111.     157.   1104      0  37.3
+ 2 2022-01-02 00:00:00    269.   0    589. 112.     189.   1087.     0  35.2
+ 3 2022-01-03 00:00:00    251.   0    887. 141.     251.   1027.     0  33.4
+ 4 2022-01-04 00:00:00    296.   0   1151. 143.     381.    934.     0  46.7
+ 5 2022-01-05 00:00:00    287    0   1431. 126.     378.    860.     0  73.4
+ 6 2022-01-06 00:00:00    310.   0   1678.  90.9    460.    760.     0  17.8
+ 7 2022-01-07 00:00:00    345.   0   1286  114.     509     721.     0  34.6
+ 8 2022-01-08 00:00:00    399    0   1038.  87.6    593.    757.     0  10.4
+ 9 2022-01-09 00:00:00    354.  17   1405. 108.     654.    790.     0  66.2
+10 2022-01-10 00:00:00    393.  69.2 2256.  85.1    201.    716.     0  11.7
+11 2022-01-11 00:00:00    339.  54.2 2333. 105.     207.    733      0  23.8
+12 2022-01-12 00:00:00    243.  98.9 2476. 102.     145.    681.     0  80  
+13 2022-01-13 00:00:00    276. 144.  2299.  95.6    266     666.     0  85.5
+14 2022-01-14 00:00:00    329. 188.  2571. 143.     441.    703.     0  81.2
+15 2022-01-15 00:00:00    291. 160.  2470. 134      454.    761.     0  30.8
+# ℹ 1 more variable: wind <dbl>
+> 
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("carbon_generation", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("carbon_generation_visual")
+> ### * carbon_generation_visual
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: carbon_generation_visual
+> ### Title: Visualize Carbon Generation Data
+> ### Aliases: carbon_generation_visual
+> 
+> ### ** Examples
+> 
+> carbon_generation_visual("2022-01-01", "2022-01-15", "line")
+Valid date range. Proceeding with API request.
+> 
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("carbon_generation_visual", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("validate_date_range")
+> ### * validate_date_range
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: validate_date_range
+> ### Title: Validate Date Range
+> ### Aliases: validate_date_range
+> 
+> ### ** Examples
+> 
+> validate_date_range("2022-01-01", "2022-01-15")
+   from_date      to_date 
+"2022-01-01" "2022-01-15" 
+> 
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("validate_date_range", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> ### * <FOOTER>
+> ###
+> cleanEx()
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  1.452 0.059 21.77 0 0 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')
