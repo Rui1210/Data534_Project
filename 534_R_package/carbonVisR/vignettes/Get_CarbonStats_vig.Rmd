@@ -22,16 +22,6 @@ library(carbonVisR)
 
 The `Get_CarbonStats` function is designed to query the Carbon Intensity API for each day within a specified date range and retrieve maximum, average, and minimum intensity values. Additionally, the function provides a convenient way to visualize the intensity trends over time using ggplot.
 
-# Installation
-
-To use the `Get_CarbonStats` function, you need to install the required packages. You can do this by running the following commands:
-
-```{r}
-install.packages("httr")
-install.packages("dplyr")
-install.packages("ggplot2")
-```
-
 # Usage
 
 The function takes two parameters: from (start date) and to (end date), both in "YYYY-MM-DD" format. Here is an example of how to use the function:
