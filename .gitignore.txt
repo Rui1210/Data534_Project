@@ -108,3 +108,7 @@ ui-tests/playwright-report
 .pnp.*
 ui-tests/.yarn/*
 ui-tests/.pnp.*
+.Rcheck/
+534_R_package/carbonVisR.Rcheck/
+534_R_package/carbonVisR_*.tar.gz
+534_R_package/carbonVisR/tests/testthat/Rplots.pdf
