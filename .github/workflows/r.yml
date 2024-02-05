@@ -22,6 +22,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
+        with:
+          path: 534_R_package/carbonVisR
         
       - name: Set up pandoc
         uses: r-lib/actions/setup-pandoc@v2
@@ -32,13 +34,12 @@ jobs:
           r-version: ${{ matrix.r-version }}
 
       - name: Install Dependencies
-        working-directory: 534_R_package/carbonVisR
-        run: |
-          install.packages(c("remotes", "rcmdcheck"))
-          remotes::install_deps(dependencies = TRUE)
-        shell: Rscript {0}
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::rcmdcheck
+          needs: check
 
       - name: Check Package
-        working-directory: 534_R_package/carbonVisR
-        run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
-        shell: Rscript {0}
+        uses: r-lib/actions/check-r-package@v2
+        with:
+          upload-snapshots: true
