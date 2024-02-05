@@ -1,0 +1,41 @@
+---
+title: "DATA 534 worknotes_yahan"
+author: "Yahan Cong"
+date: "2024-02-05"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## DATA 534 project: Notes
+
+2024.01.23: Working on API code. Transfer python code into R code. 
+
+2024.01.24: Working on API code, clean and modify the data get from API request.
+
+2024.01.25: Finish proposal. Working on API code: merge data as daily report 
+
+2024.01.26: working on API code. Check the boundary of API request. Confirm that the API request cannot earlier than 2018.05.11
+
+2024.01.27: Working on carbon_generation_visualization function. Add theme on line and stack plot. Working on pie chart. 
+
+2024.01.28: Finish carbon_generation.R Use `pie` function instead of ggplot2 for pie plot. `ggplot` causes overlapping tags. Tt does not works well on my pie chart. 
+
+2024.01.29: working on the test file. Finish data valid checking
+
+2024.01.30: working on the test file. Replace `expect_error` with `expect_message` for invalid API request
+
+2024.01.31: finish test_generation writing.
+
+2024.02.01: Start to create package
+
+2024.02.02: Meet import error: cannot find required method during package creation process. Modify description method, add `import` part in .R file
+
+2024.02.03: Get error when run devtools::check(), replace expect_that with expect_S3_class in test_gerenation.
+
+2024.02.04: Working on git action workflow. modifying 
+
+2024.02.05: Git action workflow pass. create a git action building stamp on R package readme file
+
