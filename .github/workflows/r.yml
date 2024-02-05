@@ -34,14 +34,9 @@ jobs:
       - name: Install Dependencies
         working-directory: 534_R_package/carbonVisR
         run: |
-          if [ "${{ runner.os }}" = "Linux" ]; then
-            R -e 'install.packages(c("remotes", "rcmdcheck", "usethis", "tidyr", "dplyr", "lubridate", "ggplot2", "ggthemes", "RColorBrewer", "scales", "httr"), dependencies = TRUE)'
-          elif [ "${{ runner.os }}" = "macOS" ]; then
-            R -e 'install.packages(c("remotes", "rcmdcheck", "usethis", "tidyr", "dplyr", "lubridate", "ggplot2", "ggthemes", "RColorBrewer", "scales", "httr"), dependencies = TRUE)'
-          elif [ "${{ runner.os }}" = "Windows" ]; then
-            R -e 'install.packages(c("remotes", "rcmdcheck", "usethis", "tidyr", "dplyr", "lubridate", "ggplot2", "ggthemes", "RColorBrewer", "scales", "httr"), dependencies = TRUE)'
-          fi
-        shell: bash {0}
+          install.packages(c("remotes", "rcmdcheck"))
+          remotes::install_deps(dependencies = TRUE)
+        shell: Rscript {0}
 
       - name: Check Package
         working-directory: 534_R_package/carbonVisR
