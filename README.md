@@ -11,7 +11,7 @@ The `carbonVisR` package is designed to empower users with the tools to analyze 
 You can install the package from GitHub using the `devtools` package: 
 
 ```r 
-devtools::install_github("Rui1210/Data534_Project")
+devtools::install_github("Rui1210/Data534_Project/534_R_package/carbonVisR")
 ```
 
 ## Function
