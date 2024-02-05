@@ -1,0 +1,38 @@
+---
+title: "actual_and_forecast_vignet"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{actual_and_forecast_vignet}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(carbonVisR)
+```
+
+# Introduction
+
+The `carbonVisR` package provides a set of functions for visualizing carbon generation data. This vignette aims to explain the core functions of the package and demonstrate their usage.
+
+# Functions
+
+## `actual_and_forecast`
+
+The `actual_and_forecast` function retrieve forecasted and actual carbon emissions information for given dates by Carbon Intensity API and make EDA analysis. This function aims to plot and compare the difference between forecasted and actual carbon emissions. 
+
+This function takes the input of one date in the format of "YYYY-MM-DD", and it returns a 'plot' (a ggplot object) for visualizing the intensity trends within a day.
+
+
+```{r validate_date_range}
+# Example Usage
+actual_and_forecast("2022-01-01")
+```
+
