@@ -1,0 +1,114 @@
+* using log directory ‘/Volumes/T7 1/534/Data534_Project/534_R_package/carbonVisR.Rcheck’
+* using R version 4.3.1 (2023-06-16)
+* using platform: aarch64-apple-darwin20 (64-bit)
+* R was compiled by
+    Apple clang version 14.0.0 (clang-1400.0.29.202)
+    GNU Fortran (GCC) 12.2.0
+* running under: macOS Ventura 13.5
+* using session charset: UTF-8
+* using options ‘--no-manual --as-cran’
+* checking for file ‘carbonVisR/DESCRIPTION’ ... OK
+* checking extension type ... Package
+* this is package ‘carbonVisR’ version ‘0.1.3’
+* package encoding: UTF-8
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking serialization versions ... OK
+* checking whether package ‘carbonVisR’ can be installed ... WARNING
+Found the following significant warnings:
+  WARNING: omitting pointless dependence on 'R' without a version requirement
+See ‘/Volumes/T7 1/534/Data534_Project/534_R_package/carbonVisR.Rcheck/00install.out’ for details.
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking for future file timestamps ... OK
+* checking ‘build’ directory ... OK
+* checking DESCRIPTION meta-information ... WARNING
+Non-standard license specification:
+  `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+  license
+Standardizable: FALSE
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking dependencies in R code ... NOTE
+Namespaces in Imports field not imported from:
+  ‘knitr’ ‘rmarkdown’ ‘usethis’
+  All declared Imports should be used.
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... NOTE
+Get_CarbonStats: no visible binding for global variable ‘average’
+Get_CarbonStats: no visible binding for global variable ‘index’
+actual_and_forecast: no visible binding for global variable ‘Time’
+actual_and_forecast: no visible binding for global variable ‘Actual’
+actual_and_forecast: no visible binding for global variable ‘Forecast’
+carbon_generation: no visible binding for global variable
+  ‘generationmix’
+carbon_generation: no visible binding for global variable ‘fuel’
+carbon_generation: no visible binding for global variable ‘perc’
+carbon_generation: no visible binding for global variable ‘from’
+carbon_generation: no visible binding for global variable ‘to’
+carbon_generation: no visible binding for global variable ‘biomass’
+carbon_generation: no visible binding for global variable ‘coal’
+carbon_generation: no visible binding for global variable ‘gas’
+carbon_generation: no visible binding for global variable ‘hydro’
+carbon_generation: no visible binding for global variable ‘imports’
+carbon_generation: no visible binding for global variable ‘nuclear’
+carbon_generation: no visible binding for global variable ‘other’
+carbon_generation: no visible binding for global variable ‘solar’
+carbon_generation: no visible binding for global variable ‘wind’
+carbon_generation_visual: no visible binding for global variable
+  ‘value’
+carbon_generation_visual: no visible binding for global variable ‘fuel’
+carbon_generation_visual: no visible binding for global variable ‘Sum’
+carbon_generation_visual: no visible global function definition for
+  ‘pie’
+Undefined global functions or variables:
+  Actual Forecast Sum Time average biomass coal from fuel gas
+  generationmix hydro imports index nuclear other perc pie solar to
+  value wind
+Consider adding
+  importFrom("graphics", "pie")
+to your NAMESPACE file.
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd line widths ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking installed files from ‘inst/doc’ ... OK
+* checking files in ‘vignettes’ ... OK
+* checking examples ... [2s/22s] OK
+Examples with CPU (user + system) or elapsed time > 5s
+                 user system elapsed
+Get_CarbonStats 0.483  0.021  13.488
+* checking for unstated dependencies in ‘tests’ ... OK
+* checking tests ... [2s/22s] OK
+  Running ‘testthat.R’ [1s/21s]
+* checking for unstated dependencies in vignettes ... NOTE
+'library' or 'require' call not declared from: ‘htmltools’
+* checking package vignettes in ‘inst/doc’ ... OK
+* checking re-building of vignette outputs ... [4s/23s] OK
+* checking for non-standard things in the check directory ... OK
+* checking for detritus in the temp directory ... OK
+* DONE
+Status: 2 WARNINGs, 3 NOTEs
