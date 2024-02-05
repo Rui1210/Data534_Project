@@ -37,12 +37,14 @@ jobs:
           r-version: ${{ matrix.r-version }}
 
       - name: Install Dependencies
+        working-dictionary: 534_R_package/carbonVisR
         run: |
           install.packages(c("remotes", "rcmdcheck"))
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
 
       - name: Check Package
+        working-dictionary: 534_R_package/carbonVisR
         run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
         shell: Rscript {0}
 
