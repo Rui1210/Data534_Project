@@ -1,8 +1,8 @@
 ---
-title: "carbonVisR_vignet"
+title: "carbonVisR_vitnette"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{carbonVisR_vignet}
+  %\VignetteIndexEntry{carbonVisR_vitnette}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
