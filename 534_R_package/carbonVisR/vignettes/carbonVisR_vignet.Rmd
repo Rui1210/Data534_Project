@@ -1,8 +1,8 @@
 ---
-title: "generation_vignette"
+title: "carbonVisR_vignet"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{generation_vignette}
+  %\VignetteIndexEntry{carbonVisR_vignet}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -20,18 +20,37 @@ if (!requireNamespace("htmltools", "0.5.7")) {
 }
 ```
 
-
 ```{r setup}
 library(carbonVisR)
 ```
 
 # Introduction
 
+The `carbonVisR` package is designed to empower users with the tools to analyze and visualize the dynamics of carbon intensity across the United Kingdom. Leveraging real-time data and forecasts from the Carbon Intensity API, our package meticulously compiles carbon emission statistics from various UK regions, enabling a detailed examination of environmental impacts.
+
 The `carbonVisR` package provides a set of functions for visualizing carbon generation data. This vignette aims to explain the core functions of the package and demonstrate their usage.
+
+# Installation
+
+You can install the package from GitHub using the devtools package:
+`devtools::install_github("Rui1210/Data534_Project/534_R_package/carbonVisR")`
 
 # Functions
 
-## 1. `validate_date_range`
+## `actual_and_forecast`
+
+The `actual_and_forecast` function retrieve forecasted and actual carbon emissions information for given dates by Carbon Intensity API and make EDA analysis. This function aims to plot and compare the difference between forecasted and actual carbon emissions. 
+
+This function takes the input of one date in the format of "YYYY-MM-DD", and it returns a 'plot' (a ggplot object) for visualizing the intensity trends within a day.
+
+
+```{r validate_date_range}
+# Example Usage
+actual_and_forecast("2022-01-01")
+```
+
+
+## `validate_date_range`
 
 The `validate_date_range` function is a help function for `carbon_generation` and `carbon_generation_visual`. It ensures the validity of a given date range, imposing specific constraints to guarantee meaningful results.
 
@@ -42,7 +61,7 @@ The input date range must not be earlier than May 11, 2018, and the date range c
 validate_date_range("2022-01-01", "2022-01-15")
 ```
 
-## 2. `carbon_generation`
+## `carbon_generation`
 
 The `carbon_generation` function retrieves carbon generation mix data from the Carbon Intensity API for a specified date range.
 
@@ -54,15 +73,15 @@ df_carbon_generation <- carbon_generation("2022-01-01", "2022-01-15")
 head(df_carbon_generation)
 ```
 
-## 3. `carbon_generation_visual`
+## `carbon_generation_visual`
 
 The `carbon_generation_visual` function supports three types of charts: line, stack, and pie. It visualizes carbon generation data based on the specified date range and chart type. The maximum data range is 30 days. It caters to different visualization needs. It leverages the carbon_generation function to fetch data and then utilizes ggplot2 for creating line and stack charts. For pie charts, it directly plots the data.
 
 Note: The line and stack charts use daily data, reflecting the carbon generation mix for each day within the specified date range. In contrast, the pie chart represents the overall carbon generation mix throughout the entire date range, offering a comprehensive view of the data.
 
-## Examples for carbon_generation_visual
+### Examples for carbon_generation_visual
 
-### Line chart for carbon generation mix:
+#### Line chart for carbon generation mix:
 
 ```{r line}
 # Example Usage for Line Chart
@@ -71,7 +90,7 @@ print(line_chart)
 
 ```
 
-### Stack chart for carbon generation mix:
+#### Stack chart for carbon generation mix:
 
 ```{r stack}
 # Example Usage for Stack Chart
@@ -80,10 +99,37 @@ print(stack_chart)
 
 ```
 
-### Pie chart for carbon generation mix:
+#### Pie chart for carbon generation mix:
 
 ```{r pie}
 # Example Usage for Pie Chart
 carbon_generation_visual("2022-01-01", "2022-01-15", "pie")
 
 ```
+
+## `Get_CarbonStats`
+
+The `Get_CarbonStats` function is designed to query the Carbon Intensity API for each day within a specified date range and retrieve maximum, average, and minimum intensity values. Additionally, the function provides a convenient way to visualize the intensity trends over time using ggplot.
+
+The function takes two parameters: from (start date) and to (end date), both in "YYYY-MM-DD" format. Here is an example of how to use the function:
+
+
+```{r}
+## Example useage
+# Query the Carbon Intensity API
+result <- Get_CarbonStats("2023-01-20", "2023-01-30")
+
+# Access the resulting data frame
+data <- result$data
+
+# Access the ggplot object for visualization
+plot <- result$plot
+
+# Print the data frame
+print(data)
+
+# Plot the ggplot object
+print(plot)
+```
+
+Feel free to explore additional functionality and customize the visualization to suit your specific needs.
