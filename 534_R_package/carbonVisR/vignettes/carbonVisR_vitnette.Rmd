@@ -44,7 +44,7 @@ The `actual_and_forecast` function retrieve forecasted and actual carbon emissio
 This function takes the input of one date in the format of "YYYY-MM-DD", and it returns a 'plot' (a ggplot object) for visualizing the intensity trends within a day.
 
 
-```{r validate_date_range}
+```{r}
 # Example Usage
 actual_and_forecast("2022-01-01")
 ```
