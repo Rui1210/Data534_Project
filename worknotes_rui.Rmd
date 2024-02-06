@@ -1,0 +1,34 @@
+---
+title: "DATA 534 worknotes_rui"
+author: "Rui Mao"
+date: "2024-02-05"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## DATA 534 project: Notes
+
+2024.01.23: Create the initial repo for project.
+
+2024.01.20 - 2024.01.25: Working on the proposal, picking the topic and creating the powerpoint.
+
+2024.01.25: Finish proposal. Working on API code of my function in branch.
+
+2024.01.26: Working on actual_and_forecast() function, and making the plot.
+
+2024.01.27 - 2024.01.31: Working on the unittest for my function.
+
+2024.02.01: Finish unittest.
+
+2024.02.02: Working on building the R package.
+
+2024.02.03: Working on the document that explain what does our function do.
+
+2024.02.04 - 2024.02.05: Working on the contribution file and code of conduct file, and write the vignettes.
+
+2024.02.05: Finish vignettes.
+
+
