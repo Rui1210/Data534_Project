@@ -1,0 +1,26 @@
+---
+title: "worknotes_zheng"
+author: "Zheng Zhang"
+date: "2024-02-07"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Worknote for Package carbonVisR
+
+2024-01-23  Proposal, deside function
+
+2024-01-27  connect API to access the Carbon Stats Data
+
+2024-01-28  finish Get_CarbonStats funtion
+
+2024-01-31  conduct unitest for Get_CarbonStats
+
+2024-02-01  add function,test to package
+
+2024-02-03  fail and give up to connect travis ci, finish readme.md
+
+2024-02-05  add vig
