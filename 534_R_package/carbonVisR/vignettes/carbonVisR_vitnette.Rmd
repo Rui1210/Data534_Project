@@ -65,7 +65,7 @@ validate_date_range("2022-01-01", "2022-01-15")
 
 The `carbon_generation` function retrieves carbon generation mix data from the Carbon Intensity API for a specified date range.
 
-The function internally calls `validate_date_range` to ensure the input date range is valid before making the API request. It then processes the obtained data, returning a dataframe containing information about the carbon generation mix. The date range is limited to a maximum of 30 days of daily reports.
+The function internally calls `validate_date_range` to ensure the input date range is valid before making the API request. It then processes the obtained data, returning a dataframe containing information about carbon emissions caused by UK's power generation system. The date range is limited to a maximum of 30 days of daily reports.
 
 ```{r carbon_generation}
 # Example Usage
