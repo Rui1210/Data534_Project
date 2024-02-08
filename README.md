@@ -17,7 +17,6 @@ devtools::install_github("Rui1210/Data534_Project/534_R_package/carbonVisR")
 ## Function
 
 ### validate_date_range()
-Authod: Yahan Cong
 
 This function checks the validity of a given date range, ensuring it meets specific criteria. 
 Return a vector containing the validated from_date and to_date.
@@ -38,9 +37,8 @@ validate_date_range("2022-01-01", "2022-01-15")
 
 
 ### carbon_generation()
-Authod: Yahan Cong
 
-This function retrieves data on carbon generation mix from the specified date range using the Carbon Intensity API.
+This function retrieves data on carbon emissions caused by the UK's power generation system from the specified date range using the Carbon Intensity API.
 Return a dataframe containing information about the carbon generation mix.
 
 ```r
@@ -56,7 +54,6 @@ carbon_generation("2022-01-01", "2022-01-15")
 ```
 
 ### carbon_generation_visual()
-Authod: Yahan Cong
 
 This function visualizes carbon generation data based on the specified date range and chart type. Supported chart types include "line", "stack", and "pie".
 A ggplot object representing the requested chart (for "line" and "stack" types). For "pie" type, the function directly plots and doesn't return a ggplot object.
@@ -76,7 +73,6 @@ carbon_generation_visual("2022-01-01", "2022-01-15", "line")
 ```
 
 ### actual_and_forecast()
-Authod: Rui Mao
 
 This function fetches the actual and forecasted carbon intensity data for electricity generation in Great Britain for a specified date from the National Grid's Carbon Intensity API. It then plots this data showing the trends over the course of the day.
 Return a ggplot object representing the trend of carbon intensity, both actual and forecasted.
@@ -92,7 +88,6 @@ actual_and_forecast('2023-01-12')
 ```
 
 ### Get_CarbonStats
-Authod: Zheng Zhang
 
 The function queries the Carbon Intensity API for each day within the specified date range and retrieves maximum, average, and minimum intensity values. The result is a data frame containing date-wise intensity statistics, and a ggplot object for visualizing the intensity trends over time.
 
